@@ -11,6 +11,20 @@ import jakarta.servlet.http.HttpServlet;
 public class TabuadaServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
         throws ServletException, IOException {
+            request.getRequestDispatcher("./tabuada.jsp").forward(request, response);
 
     }    
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+        throws ServletException, IOException {
+            int numero = Integer.parseInt(request.getParameter("numero"));
+            int[] resultado = new int[10];
+
+            for(int i = 0;i < 10;i++){
+                resultado[i] = (i+1)*numero;
+            }
+
+            request.setAttribute("resultado: ", resultado);
+
+            request.getRequestDispatcher("./tabuada.jsp").forward(request, response);
+    }  
 }

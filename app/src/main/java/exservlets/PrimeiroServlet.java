@@ -13,6 +13,6 @@ public class PrimeiroServlet  extends HttpServlet{
         throws ServletException, IOException {
             String n = request.getParameter("nome"); 
             //response.getWriter().print("Olá "+n);
-            request.getRequestDispatcher("/index.jsp");
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }
