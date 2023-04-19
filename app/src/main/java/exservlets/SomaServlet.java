@@ -6,20 +6,24 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.RequestDispatcher;
 
-public class SomaServlet {
+@WebServlet("/soma")
+public class SomaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
     throws ServletException, IOException {
-        request.getRequestDispatcher("./soma.jsp").forward(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/soma.jsp");
+        dispatcher.forward(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
         throws ServletException, IOException {
             int numero1 = Integer.parseInt(request.getParameter("numero1"));
             int numero2 = Integer.parseInt(request.getParameter("numero2"));
-            int resultado = numero1+numero2;
+            int respSoma = numero1+numero2;
 
-            request.setAttribute("resultado", resultado);
-
-            request.getRequestDispatcher("./soma.jsp").forward(request, response);
+            request.setAttribute("resultado", respSoma);
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/soma.jsp");
+            dispatcher.forward(request, response);
     }    
 }

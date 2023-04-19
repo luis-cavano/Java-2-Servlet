@@ -10,15 +10,14 @@
     <title>Soma</title>
 </head>
 <body>
-    <form action="/tabuada" method="post">
+    <form action="/soma" method="post">
         <input type="number" name="numero1" />
         <input type="number" name="numero2" />
         <button type="submit">Calcular</button>
     </form>
     <hr />
-    <h1>
-        Soma: ${resultado}
-    </h1>
+    <h1>Soma: ${resultado}</h1>
+    
     
 </body>
 </html>
