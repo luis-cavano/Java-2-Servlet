@@ -15,8 +15,8 @@
         <button type="submit">Calcular</button>
     </form>
     <hr />
-    <c:forEach var="num" items="${resultados}">
-        ${num} <br/>
+    <c:forEach var="num" items="${respTabuada}">
+        <li>${num}</li>
     </c:forEach>
 </body>
-</html>
+</html> 
